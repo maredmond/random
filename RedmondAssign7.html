@@ -4,16 +4,16 @@
     -->
 <!--This is an HTML comment. -->
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
+<html xmlns="http://www.w3.org/         * 1999/xhtml">
+<head        * >
     <title>Assignment 7</title>
     
     
     <style>
         body {
     font-family: Arial, Helvetica, sans-serif;
-    background: #EEDDCC; 
-    color : purple;
+    background: lightblue; 
+    color : blue;
         }
 
     #heading 
@@ -108,6 +108,8 @@ fieldset #container {
          * Author: Dr Redmond
          * E-Mail: redmond@lasalle.edu
          * Date: 2021-10-26
+        * Revised 2023-09-28
+        * CSC class example
          * Purpose: Have a little "competition" between different types of pictures, to see which is generated most.
          */
 
@@ -117,9 +119,8 @@ fieldset #container {
         ///////////////////////////////////////////////
 
         /// generate a random number between min and max
-        function GenerateNumber(min, max) {
-            let myTarget;
-            myTarget = Math.floor(Math.random() * ((max + 1) - min)) + min;
+        function GenerateNumber(min, max) { 
+            let myTarget = Math.floor(Math.random() * ((max + 1) - min)) + min;
             return myTarget;
         }
 
@@ -136,16 +137,16 @@ fieldset #container {
             let toAdd;
             // loop through all spots - generating a picture for each
             for (cnt = 1; cnt <= 40; cnt++) {
-                // bonus for #13
-                if (cnt == 13) {
-                    // worth 5 points instead of 1
-                    toAdd = 5;
+                // bonus for #12
+                if (cnt == 12) {
+                    // worth 10 points instead of 1
+                    toAdd = 10;
                 }
                 else {
                     toAdd = 1;
                 } 
-                // generate type number - type of picture
-                let typeNo = GenerateNumber(1, 5);
+                // generate type number - type of picture - no aliens now
+                let typeNo = GenerateNumber(1, 4);
                 // credit points - and set up for getting file name by setting category name
                 let name;
                 // if an eagle add to eagles points
@@ -179,7 +180,7 @@ fieldset #container {
                 document.getElementById("img" + cnt).src = name + "-" + imageNo + ".jpg";
             }  
             // output all scores
-            document.getElementById("txtEagles").value = numEagles;
+            document.getElementById("txtEagles").value = numEagles + 10;
             document.getElementById("txtParks").value = numParks;
             document.getElementById("txtIdols").value = numIdols;
             document.getElementById("txtActors").value = numActors;
